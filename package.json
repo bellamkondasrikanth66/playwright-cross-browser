@@ -1,0 +1,16 @@
+{
+  "name": "playwright-cross-browser-testing",
+  "version": "1.0.0",
+  "description": "Automated Cross-Browser UI Tests using Playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:chromium": "npx playwright test --project=chromium",
+    "test:firefox": "npx playwright test --project=firefox",
+    "test:webkit": "npx playwright test --project=webkit",
+    "test:report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  }
+}
