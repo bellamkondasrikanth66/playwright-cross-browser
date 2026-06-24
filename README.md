@@ -1,73 +1,132 @@
 # Playwright Cross-Browser UI Automation Suite
 
-This repository contains an automated UI testing framework built with **Playwright** and **JavaScript**. It executes end-to-end user flows across multiple browser engines simultaneously to guarantee cross-browser layout and functionality compatibility.
+This repository contains an automated UI testing framework built with **Playwright** and **JavaScript**. The framework executes end-to-end user workflows across multiple browser engines to ensure consistent functionality and UI behavior across supported browsers.
 
 ## Prerequisites
 
-Ensure you have the following installed locally:
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- npm (comes packaged with Node)
+Before getting started, ensure the following are installed on your machine:
 
----
+* **Node.js** (v18 or later recommended)
+* **npm** (included with Node.js)
 
-## Setup Process
+## Setup
 
-1. **Clone the repository:**
+### 1. Clone the Repository
+
 ```bash
-   git clone <your-repository-url>
-   cd playwright-cross-browser
+git clone <your-repository-url>
+cd playwright-cross-browser
+```
 
+### 2. Install Dependencies
 
-2. **Install project dependencies:**
+```bash
 npm install
+```
 
-3. **Install Playwright Browser Binaries:**
-This command downloads the exact browser binaries (Chromium, Firefox, and WebKit) optimized for your current OS:
+### 3. Install Playwright Browsers
 
+This command downloads the required browser binaries for Chromium, Firefox, and WebKit.
+
+```bash
 npx playwright install
+```
 
-4. **Test Application**
-The test suite targets the SauceLabs Demo Application: https://www.saucedemo.com
+## Test Application
 
-Covered User Flows
-Flow 1: Successful Authentication & Inventory Page Navigation.
+The test suite is designed to validate the following demo application:
 
-Flow 2: Product Sorting Dropdown functionality and Data Display verification.
+**URL:** https://www.saucedemo.com
 
-Flow 3: End-to-End Item Cart Checkout Form submission.
+## Covered User Flows
 
-Cross-Browser Configuration
-The framework is configured via playwright.config.js to execute across three desktop matrix profiles under the projects block:
+### Flow 1: User Authentication
 
-Chromium (Google Chrome engine)
+* Verify successful login using valid credentials.
+* Validate navigation to the inventory page.
 
-Firefox (Mozilla engine)
+### Flow 2: Product Sorting
 
-WebKit (Apple Safari engine)
+* Verify sorting functionality using the product dropdown.
+* Validate correct product ordering and data display.
 
-By default, tests run concurrently across all projects to maximize performance.
+### Flow 3: End-to-End Checkout
 
-5. **Test Execution Commands**
-Run the following scripts from the root directory to initiate test runs:
+* Add products to the cart.
+* Complete the checkout process.
+* Verify successful order submission.
 
-Run all tests on all browsers (Parallel Matrix):
+## Cross-Browser Execution
+
+The framework is configured through `playwright.config.js` and executes tests across the following browser projects:
+
+* **Chromium** (Google Chrome Engine)
+* **Firefox** (Mozilla Firefox Engine)
+* **WebKit** (Safari Engine)
+
+By default, Playwright runs tests concurrently across all configured browser projects, enabling efficient cross-browser validation.
+
+## Test Execution Commands
+
+Run the following commands from the project root directory.
+
+### Execute All Tests (Cross-Browser Matrix)
+
+```bash
 npm test
+```
 
-Run tests exclusively on Chromium:
+### Execute Tests on Chromium Only
+
+```bash
 npm run test:chromium
+```
 
-Run tests exclusively on Firefox:
+### Execute Tests on Firefox Only
+
+```bash
 npm run test:firefox
+```
 
-Run tests exclusively on WebKit (Safari Engine):
+### Execute Tests on WebKit Only
+
+```bash
 npm run test:webkit
+```
 
-**Viewing Test Reports**
-After a test execution completes, an interactive HTML report provides visual pass/fail metrics broken down by individual browser execution profiles. To open the report locally:
+## Viewing Test Reports
+
+After test execution completes, Playwright generates an interactive HTML report containing detailed execution results, screenshots, traces, and browser-specific pass/fail metrics.
+
+To open the report:
+
+```bash
 npm run test:report
+```
 
 ## Test Execution Results
 
-Here is the successful cross-browser execution matrix showing all 9 test variants passing concurrently:
+The screenshot below shows a successful cross-browser execution where all test scenarios passed across Chromium, Firefox, and WebKit.
 
 ![Playwright Cross-Browser Test Report](./playwright-report.png)
+
+## Technology Stack
+
+* Playwright
+* JavaScript (ES6+)
+* Node.js
+* Chromium
+* Firefox
+* WebKit
+
+## Project Structure
+
+```text
+playwright-cross-browser/
+├── tests/
+│   └── *.spec.js
+├── playwright.config.js
+├── package.json
+├── playwright-report/
+└── README.md
+```
