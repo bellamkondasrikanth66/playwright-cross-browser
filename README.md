@@ -18,15 +18,15 @@ Ensure you have the following installed locally:
    cd playwright-cross-browser
 
 
-## Install project dependencies:
+2. **Install project dependencies:**
 npm install
 
-Install Playwright Browser Binaries:
+3. **Install Playwright Browser Binaries:**
 This command downloads the exact browser binaries (Chromium, Firefox, and WebKit) optimized for your current OS:
 
 npx playwright install
 
-Test Application
+4. **Test Application**
 The test suite targets the SauceLabs Demo Application: https://www.saucedemo.com
 
 Covered User Flows
@@ -47,7 +47,7 @@ WebKit (Apple Safari engine)
 
 By default, tests run concurrently across all projects to maximize performance.
 
-Test Execution Commands
+5. **Test Execution Commands**
 Run the following scripts from the root directory to initiate test runs:
 
 Run all tests on all browsers (Parallel Matrix):
@@ -62,7 +62,7 @@ npm run test:firefox
 Run tests exclusively on WebKit (Safari Engine):
 npm run test:webkit
 
-## Viewing Test Reports
+**Viewing Test Reports**
 After a test execution completes, an interactive HTML report provides visual pass/fail metrics broken down by individual browser execution profiles. To open the report locally:
 npm run test:report
 
